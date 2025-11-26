@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 金析为证 · 电子数据哈希审计
 
-# Run and deploy your AI Studio app
+现代化的电子证据哈希校验工具，面向司法鉴定场景设计。支持批量文件与 ZIP 包递交、本地离线计算 MD5/sha256 指纹、进度可视化与结果导出，并提供独立的操作指引页面，帮助一线人员快速上手。
 
-This contains everything you need to run your app locally.
+## 特性亮点
+- **多源上传**：拖拽文件夹、ZIP 压缩包或单/多文件，一次性接入。
+- **安全离线**：全程在浏览器内计算哈希，数据不经网络传输。
+- **智能队列**：自动排队处理，实时显示进度、状态与统计摘要。
+- **结果导出**：支持哈希结果表格查看、筛选与导出。
+- **操作指引**：顶栏入口切换到独立的《操作指引》页面，包含步骤说明与常见问题。
+- **移动体验**：布局、间距与交互按移动端优化，保证小屏也能顺畅使用。
 
-View your app in AI Studio: https://ai.studio/apps/drive/1aBLkFhEigIErdbUcMgh0Onet7Q3dxkRH
+## 快速开始
+> 环境需求：Node.js 18+，npm（已附 `package-lock.json` 便于一致安装）。
 
-## Run Locally
+1. 安装依赖：`npm install`
+2. 运行开发环境：`npm run dev`
+3. 浏览器访问提示地址（通常为 `http://localhost:5173`），即可体验离线哈希校验。
 
-**Prerequisites:**  Node.js
+## 常用脚本
+- `npm run dev`：本地开发预览。
+- `npm run build`：生产环境构建。
+- `npm run preview`：基于构建产物的本地预览。
 
+## 部署
+项目已配置 GitHub Actions 自动构建并发布至 GitHub Pages。推送到默认分支后，工作流会执行 `npm ci && npm run build`，上传 Vite 产物并完成 Pages 发布（含并发保护与缓存）。
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 目录速览
+- `App.tsx`：页面路由状态、上传/队列逻辑与总体布局。
+- `components/`：Header、结果表、操作指引页面等 UI 组件。
+- `utils/fileHelper.ts`：文件读取、压缩包解析与哈希计算辅助方法。
+- `vite.config.ts`：构建与资源基准路径配置（适配 Pages 部署）。
+
+## 许可证
+本项目代码遵循本仓库 LICENSE 约定，使用前请留意相关限制。
