@@ -5,7 +5,7 @@ import { Dashboard } from './components/Dashboard';
 import { GuidePage } from './components/GuidePage';
 import { ProcessedFile, SummaryStats } from './types';
 import { processInputFiles, calculateHashes } from './utils/fileHelper';
-import { UploadCloud, FolderUp, FileUp, X } from 'lucide-react';
+import { UploadCloud, FolderUp, FileUp, X, Hand, ShieldCheck, Download, ArrowUpRight } from 'lucide-react';
 import clsx from 'clsx';
 
 function App() {
