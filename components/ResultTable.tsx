@@ -46,31 +46,31 @@ export const ResultTable: React.FC<ResultTableProps> = ({ files }) => {
   if (files.length === 0) return null;
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col h-[600px]">
-      <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col h-[480px] sm:h-[600px]">
+      <div className="p-4 border-b border-slate-100 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between bg-slate-50/50">
         <h3 className="font-semibold text-slate-700 flex items-center gap-2">
           <FolderOpen size={18} className="text-brand-500" />
           证据文件列表 <span className="text-slate-400 font-normal">({files.length})</span>
         </h3>
-        <div className="flex gap-3">
-          <input 
-            type="text" 
-            placeholder="搜索文件名..." 
-            className="px-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-200 focus:border-brand-500 outline-none transition-all"
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
+          <input
+            type="text"
+            placeholder="搜索文件名..."
+            className="px-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-200 focus:border-brand-500 outline-none transition-all w-full sm:w-56"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           />
-          <button 
+          <button
             onClick={handleExport}
-            className="px-4 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-lg transition-colors flex items-center gap-2 shadow-sm"
+            className="px-4 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-lg transition-colors flex items-center gap-2 shadow-sm justify-center"
           >
             导出 Excel 报告
           </button>
         </div>
       </div>
-      
+
       <div className="flex-1 overflow-auto">
-        <table className="w-full text-left border-collapse">
+        <table className="w-full min-w-[720px] text-left border-collapse">
           <thead className="bg-slate-50 sticky top-0 z-10">
             <tr>
               <th className="py-3 px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider border-b border-slate-200 w-1/4">文件名 / 路径</th>
