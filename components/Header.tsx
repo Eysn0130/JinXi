@@ -1,7 +1,11 @@
 import React from 'react';
 import { ShieldCheck, FileSearch } from 'lucide-react';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onGuideClick?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onGuideClick }) => {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -14,13 +18,16 @@ export const Header: React.FC = () => {
             <p className="text-xs text-slate-500 font-medium tracking-wide">电子证据完整性校验系统</p>
           </div>
         </div>
-        
-        <div className="flex items-center space-x-6 text-sm font-medium text-slate-600">
-          <div className="hidden md:flex items-center space-x-1 hover:text-brand-600 cursor-pointer transition-colors">
+
+        <div className="flex items-center space-x-3 sm:space-x-6 text-sm font-medium text-slate-600">
+          <button
+            onClick={onGuideClick}
+            className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:border-brand-300 hover:text-brand-600 transition-colors"
+          >
             <FileSearch size={16} />
             <span>操作指引</span>
-          </div>
-          <div className="px-3 py-1.5 bg-slate-100 rounded-full text-xs text-slate-500 border border-slate-200">
+          </button>
+          <div className="px-3 py-1.5 bg-slate-100 rounded-full text-xs text-slate-500 border border-slate-200 whitespace-nowrap">
             V 2.5.0 Professional
           </div>
         </div>
