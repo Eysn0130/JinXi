@@ -139,14 +139,14 @@ function App() {
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-900">
       <Header />
       
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
         
         {/* Intro Section */}
-        <div className="text-center max-w-2xl mx-auto mb-8">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 px-2">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-3 leading-tight">
             电子数据哈希审计
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             支持拖拽文件夹、ZIP 压缩包及批量文件。
             <br className="hidden sm:inline" />
             本地离线计算，确保数据绝对安全，严守司法鉴定标准。
@@ -156,9 +156,9 @@ function App() {
         {/* Upload Area */}
         <div 
           className={clsx(
-            "relative rounded-3xl border-2 border-dashed transition-all duration-300 ease-in-out p-12 text-center group cursor-pointer overflow-hidden",
-            dragActive 
-              ? "border-brand-500 bg-brand-50/50 scale-[1.01] shadow-xl shadow-brand-100" 
+            "relative rounded-3xl border-2 border-dashed transition-all duration-300 ease-in-out p-8 sm:p-12 text-center group cursor-pointer overflow-hidden",
+            dragActive
+              ? "border-brand-500 bg-brand-50/50 scale-[1.01] shadow-xl shadow-brand-100"
               : "border-slate-300 bg-white hover:border-brand-400 hover:bg-slate-50/50 hover:shadow-lg"
           )}
           onDragEnter={onDragEnter}
@@ -171,11 +171,11 @@ function App() {
               "p-4 rounded-full transition-colors duration-300",
               dragActive ? "bg-brand-100 text-brand-600" : "bg-slate-100 text-slate-400 group-hover:bg-brand-50 group-hover:text-brand-500"
             )}>
-              <UploadCloud size={48} strokeWidth={1.5} />
+              <UploadCloud size={42} strokeWidth={1.5} />
             </div>
-            
+
             <div className="space-y-1">
-              <p className="text-xl font-semibold text-slate-700">
+              <p className="text-lg sm:text-xl font-semibold text-slate-700">
                 点击上传 或 拖拽文件至此处
               </p>
               <p className="text-sm text-slate-500">
@@ -183,8 +183,8 @@ function App() {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-               <button 
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
+               <button
                  onClick={() => fileInputRef.current?.click()}
                  className="inline-flex items-center px-4 py-2 bg-white border border-slate-300 rounded-lg text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-all"
                >
@@ -221,10 +221,10 @@ function App() {
         {/* Dashboard & Results */}
         {files.length > 0 && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="flex justify-end mb-4">
-              <button 
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-2 sm:gap-0 mb-4">
+              <button
                 onClick={clearAll}
-                className="text-sm text-red-500 hover:text-red-700 flex items-center font-medium px-3 py-1 rounded-md hover:bg-red-50 transition-colors"
+                className="self-end sm:self-auto text-sm text-red-500 hover:text-red-700 flex items-center font-medium px-3 py-1 rounded-md hover:bg-red-50 transition-colors"
               >
                 <X size={16} className="mr-1" /> 清空列表
               </button>
@@ -239,7 +239,7 @@ function App() {
 
       <footer className="border-t border-slate-200 bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 text-center text-slate-400 text-sm">
-          <p>© 2024 金析为证 · 电子证据实验室. All rights reserved.</p>
+          <p>© 2025 金析为证 · 电子证据实验室. All rights reserved.</p>
           <p className="mt-2 text-xs">本工具所有计算均在浏览器本地完成，严守数据隐私。</p>
         </div>
       </footer>
