@@ -239,7 +239,7 @@ function App() {
 
       <footer className="border-t border-slate-200 bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 text-center text-slate-400 text-sm">
-          <p>© 2024 金析为证 · 电子证据实验室. All rights reserved.</p>
+          <p>© 2025 金析为证 · 电子证据实验室. All rights reserved.</p>
           <p className="mt-2 text-xs">本工具所有计算均在浏览器本地完成，严守数据隐私。</p>
         </div>
       </footer>
